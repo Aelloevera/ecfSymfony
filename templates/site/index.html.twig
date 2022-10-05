@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Accueil
+{% endblock %}
+
+{% block content %}
+	{% include "parts/banniere.html.twig" %}
+
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h1 class="text-center">Ma boutique</h1>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="col-3">
+			{% for produit in produits %}
+
+				<div class="card" style="width: 18rem;">
+					<img src="{{produit.image}}" class="card-img-top" alt="image">
+					<div class="card-body">
+						<h5 class="card-title">{{produit.nom}}</h5>
+						<p class="card-text">{{produit.description}}</p>
+						<a href="{{path('produit', {'id': produit.id, 'url':produit.nom})}}" style="color:white" class="btn btn-primary">Voir le produit</a>
+					</div>
+				</div>
+				{# pas mis en page parce que plus le temps malheureusement #}
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}

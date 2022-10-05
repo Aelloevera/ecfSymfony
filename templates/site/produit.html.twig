@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+	{% include "parts/banniere.html.twig" %}
+
+	<div class="container">
+		<div class="col-3">
+			<h1>{{produit.nom}}</h1>
+			{{produit.reference}}
+			<img src="{{produit.image}}">
+			{{produit.descriptionL}}
+		</div>
+	</div>
+	{# pas mis en page parce que plus le temps malheureusement #}
+{% endblock %}
